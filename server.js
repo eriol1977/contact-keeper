@@ -6,6 +6,9 @@ const app = express();
 // connect database
 connectDB();
 
+// init middleware
+app.use(express.json({ extended: false })); // to access body data (not necessary anymore to require body-parser)
+
 app.get('/', (req, res) =>
   res.json({ msg: 'Welcome to the ContactKeeper API...' })
 );
